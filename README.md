@@ -48,7 +48,7 @@ Since this is a client-side application, setup is incredibly straightforward:
    Type a query in any language into the bottom text area and click Send!
 
 ## Demo Video
-[Insert Link to YouTube Demo Video Here]
+https://youtu.be/wUDXnyfwA5E
 
 ## Technical Approach
 This project was built focusing on implementation simplicity and robust functionality. We opted for Vanilla JavaScript to minimize dependency overhead and maximize performance. The Gemini API was selected for its exceptional multilingual capabilities and highly structured JSON output generation, enabling us to parse the detected language, translation, and suggested response in a single, efficient API call.
