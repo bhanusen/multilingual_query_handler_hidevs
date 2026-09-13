@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Query Handler</title>
+    <meta name="description" content="Real-time AI-powered multilingual customer support query translator.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar / Settings -->
+        <aside class="sidebar glass-panel">
+            <div class="brand">
+                <div class="logo">
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <h1>GlobalSupport</h1>
+            </div>
+            
+            <div class="settings-section">
+                <h2><i class="fa-solid fa-gear"></i> Settings</h2>
+                <div class="input-group">
+                    <label for="api-key">Gemini API Key</label>
+                    <input type="password" id="api-key" placeholder="Enter your API Key...">
+                    <small>Your key is stored locally and never sent to our servers.</small>
+                </div>
+                <button id="save-settings" class="btn primary-btn">Save Settings</button>
+                <div id="settings-status" class="status-msg hidden">Saved!</div>
+            </div>
+
+            <div class="info-section">
+                <h3>How it works</h3>
+                <p>Type a customer query in any language. Our AI will automatically detect the language, translate it to English, and suggest a response.</p>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <header class="chat-header glass-panel">
+                <h2>Incoming Queries</h2>
+                <div class="status-indicator">
+                    <span class="dot"></span> Waiting for input
+                </div>
+            </header>
+
+            <div class="messages-container" id="messages">
+                <!-- Example Message Template (Hidden initially, created via JS) -->
+                <!--
+                <div class="message-card glass-panel">
+                    <div class="message-header">
+                        <span class="badge lang-badge">Spanish (Detected)</span>
+                        <span class="timestamp">10:42 AM</span>
+                    </div>
+                    <div class="message-body">
+                        <p class="original-text">¿Cómo puedo restablecer mi contraseña?</p>
+                        <div class="translation-box">
+                            <i class="fa-solid fa-language"></i>
+                            <p class="translated-text">How can I reset my password?</p>
+                        </div>
+                    </div>
+                    <div class="message-footer">
+                        <h4>Suggested Response:</h4>
+                        <p class="suggested-response">You can reset your password by clicking on the "Forgot Password" link on the login page.</p>
+                        <button class="btn secondary-btn sm-btn"><i class="fa-solid fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                -->
+                
+                <div class="empty-state">
+                    <div class="empty-icon">
+                        <i class="fa-regular fa-comments"></i>
+                    </div>
+                    <h2>No Queries Yet</h2>
+                    <p>Enter a customer query below to see the magic happen.</p>
+                </div>
+            </div>
+
+            <div class="input-area glass-panel">
+                <form id="query-form">
+                    <textarea id="query-input" placeholder="Type customer query here (in any language)..." rows="1"></textarea>
+                    <button type="submit" class="btn primary-btn send-btn" id="send-btn" disabled>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="app.js?v=3"></script>
+</body>
+</html>
