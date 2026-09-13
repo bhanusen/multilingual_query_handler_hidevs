@@ -176,6 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         messagesContainer.appendChild(messageCard);
+
+        setTimeout(() => {
+            messageCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }, 50);
     }
 
     function escapeHTML(str) {
